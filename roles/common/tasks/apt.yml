@@ -1,0 +1,22 @@
+---
+# Tasks for configuring apt & packages
+- name: Update APT repositories
+  apt:
+   update_cache=yes
+   cache_valid_time=3600
+
+- name: Install base packages
+  apt:
+    name: "{{ packages }}"
+    state: present
+
+- name: Configure unattended-upgrades
+  blockinfile:
+    path: /etc/apt/apt.conf.d/20auto-upgrades
+    owner: root
+    group: root
+    mode: 0644
+    create: yes
+    block: |
+      APT::Periodic::Update-Package-Lists "1";
+      APT::Periodic::Unattended-Upgrade "1";

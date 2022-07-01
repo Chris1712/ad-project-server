@@ -1,0 +1,30 @@
+---
+# Tasks for configuring SSH / users
+- name: Make sure sshd is enabled & running
+  service:
+    name: sshd
+    state: started
+    enabled: yes
+
+- name: Copy configuration for sshd
+  template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+  notify: restart sshd
+
+- name: Make user for Chris
+  user:
+    name: chris
+    comment: Chris
+    groups: sudo
+    append: yes
+    shell: /usr/bin/zsh
+    update_password: on_create
+    # made with:    mkpasswd --method=SHA-512
+    password: $6$18wBdmIMI6Ufw.td$Kd3YRoSO7sfKSSpL6uADUJeejvyHOOQDcXiVOJfYCXsKifZ2tAVvwm7HlBzdDzWHIr6TeVdxSax4xXJlf0xm..
+
+- name: Set public SSH key for Chris
+  authorized_key:
+    user: chris
+    state: present
+    key: https://github.com/chris1712.keys

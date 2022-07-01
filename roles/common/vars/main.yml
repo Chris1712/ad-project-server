@@ -1,0 +1,18 @@
+---
+packages:
+- sudo
+- adduser
+- zsh
+- unattended-upgrades
+- neovim
+- speedtest-cli
+- htop
+- glances
+- curl
+- wget
+- unzip
+- dnsutils
+- jq
+- git
+- tree
+- screen
