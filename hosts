@@ -1,2 +1,0 @@
-[webserver]
-project-server ansible_host=51.195.218.79 ansible_port=954 ansible_python_interpreter=/usr/bin/python3
