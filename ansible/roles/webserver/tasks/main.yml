@@ -1,0 +1,8 @@
+---
+# Main task file
+
+# Setup nginx
+- include: nginx.yml
+
+# Setup apt
+- include: apt.yml

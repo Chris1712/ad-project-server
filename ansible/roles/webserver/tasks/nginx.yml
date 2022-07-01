@@ -1,0 +1,8 @@
+---
+- name: Make sure nginx is enabled & running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+# TODO add some config
