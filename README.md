@@ -4,7 +4,10 @@ Ansible config etc.
 
 ## Setup
 
-`run-ansible.sh USERNAME`  will use ansible to apply the playbook. You'll need to know the password for the supplied user, and have a working SSH private key.
+Requires ansible, available in homebrew, ubuntu apt, etc.
+
+`run-ansible.sh`  will use ansible to apply the playbook. You'll need to have SSH access to the server as a user with sudo permission.
+Ansible will prompt you for the password at the beginning of the run.
 
 ## Info
 

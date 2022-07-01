@@ -2,4 +2,5 @@
 - hosts: webserver
   roles:
     - common
+    - webserver
   become: yes

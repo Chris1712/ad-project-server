@@ -1,2 +1,2 @@
 #!/bin/sh
-ansible-playbook server.yml -i hosts --ask-become-pass --become-user $1
+ansible-playbook server.yml -i hosts --ask-become-pass

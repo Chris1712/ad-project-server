@@ -1,0 +1,14 @@
+---
+# Tasks for configuring apt & packages
+- name: Update APT repositories
+  apt:
+   update_cache=yes
+   cache_valid_time=3600
+
+- name: Install nginx packages
+  apt:
+    name:
+      - nginx
+      - certbot
+      - python3-certbot-nginx
+    state: present
