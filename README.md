@@ -9,6 +9,8 @@ Requires ansible, available in homebrew, ubuntu apt, etc.
 `run-ansible.sh`  will use ansible to apply the playbook. You'll need to have SSH access to the server as a user with sudo permission.
 Ansible will prompt you for the password at the beginning of the run.
 
+For expediency, certbot is configured manually - after the playbook is applied to a new server, running 'sudo ansible --nginx' will configure https
+
 ## Info
 
 The server details are stored in `hosts`
