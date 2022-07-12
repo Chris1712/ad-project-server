@@ -28,3 +28,20 @@
     user: chris
     state: present
     key: https://github.com/chris1712.keys
+
+- name: Make user for Gerry
+  user:
+    name: gerry
+    comment: Gerry
+    groups: sudo
+    append: yes
+    shell: /usr/bin/zsh
+    update_password: on_create
+    # made with:    mkpasswd --method=SHA-512
+    password: $6$E7wC5yjBby/ZwRJp$5kJ5VNTCeU.fL6potTP.jbBZQzbKoOk/ItMRZDw4klQ0356bSDYtm2q05SKFjhh5pSSUpsc7outyqGX70xOgM0
+
+- name: Set public SSH key for Gerry
+  authorized_key:
+    user: gerry
+    state: present
+    key: "{{ lookup('file', 'id_gmf.pub') }}"
