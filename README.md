@@ -1,6 +1,6 @@
 # Project Server
 
-Ansible config etc.
+Ansible config etc. for server hosting [openai recipes](https://github.com/Chris1712/openai-recipes)
 
 ## Setup
 
