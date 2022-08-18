@@ -1,6 +1,10 @@
 # Project Server
 
-Ansible config etc.
+Ansible config to set up a webserver with nginx and associated useful packages, along with SSH access.
+
+Nginx setup includes a plaintext forward; this allows tailing of the raw traffic:
+
+`ssh -t ovhproj 'sudo tcpdump -i any port 8112 -nA'`
 
 ## Setup
 
