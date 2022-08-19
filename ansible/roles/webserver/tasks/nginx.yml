@@ -5,4 +5,9 @@
     state: started
     enabled: yes
 
-# TODO add some config
+- name: Copy nginx config file
+  copy:
+    src: nginx-config-default
+    dest: /etc/nginx/sites-available/default
+  notify: restart nginx
+

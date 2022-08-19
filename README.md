@@ -2,6 +2,12 @@
 
 Ansible config etc. for server hosting [openai recipes](https://github.com/Chris1712/openai-recipes)
 
+Sets up a webserver with nginx and associated useful packages, along with SSH access.
+
+Nginx setup includes a plaintext forward; this allows tailing of the raw traffic:
+
+`ssh -t ovhproj 'sudo tcpdump -i any port 8112 -nA'`
+
 ## Setup
 
 Requires ansible, available in homebrew, ubuntu apt, etc.
